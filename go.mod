@@ -1,4 +1,4 @@
-module mylog
+module my-log
 
 go 1.15
 
