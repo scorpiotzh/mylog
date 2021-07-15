@@ -1,4 +1,4 @@
-module my-log
+module github.com/scorpiotzh/mylog
 
 go 1.15
 
