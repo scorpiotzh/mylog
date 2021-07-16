@@ -13,16 +13,16 @@ func init() {
 	var err error
 	// EncoderConfig
 	encoderConfig := zapcore.EncoderConfig{
-		TimeKey:        "timestamp",
-		LevelKey:       "severity",
-		NameKey:        "logger",
-		CallerKey:      "caller",
-		MessageKey:     "message",
-		StacktraceKey:  "stacktrace",
+		TimeKey:        "TK",
+		LevelKey:       "LK",
+		NameKey:        "NK",
+		CallerKey:      "CK",
+		MessageKey:     "MK",
+		StacktraceKey:  "SK",
 		LineEnding:     "\n",
-		EncodeLevel:    zapcore.LowercaseLevelEncoder,
+		EncodeLevel:    zapcore.CapitalColorLevelEncoder,
 		EncodeTime:     EncodeTime, //zapcore.ISO8601TimeEncoder,
-		EncodeDuration: zapcore.SecondsDurationEncoder,
+		EncodeDuration: zapcore.StringDurationEncoder,
 		EncodeCaller:   zapcore.ShortCallerEncoder,
 	}
 	// Config
@@ -34,9 +34,10 @@ func init() {
 		EncoderConfig:     encoderConfig,
 		OutputPaths:       []string{"stdout"},
 		ErrorOutputPaths:  []string{"stdout"},
+		DisableCaller:     false,
 	}
 	// Logger
-	zapLogger, err = config.Build()
+	zapLogger, err = config.Build(zap.AddCallerSkip(1))
 	if err != nil {
 		panic(err)
 	}

@@ -6,10 +6,7 @@ import (
 )
 
 func TestLog(t *testing.T) {
-	log := NewLogger("test", LevelNotice)
-
-	log.Notice("aaaaa")
-	log.Noticef("aaa %s aaa", "bbb")
+	log := NewLogger("test", LevelDebug)
 
 	log.Debug("aaaaa")
 	log.Debugf("aaa %s aaa", "bbb")
