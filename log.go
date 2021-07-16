@@ -15,10 +15,10 @@ const (
 )
 
 const (
-	colorDebug = 35
-	colorInfo  = 34
-	colorWarn  = 33
-	colorError = 31
+	colorDebug = 95
+	colorInfo  = 94
+	colorWarn  = 93
+	colorError = 91
 	colorPanic = 91
 	colorFatal = 91
 )
