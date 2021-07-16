@@ -6,6 +6,7 @@ import (
 )
 
 func TestLog(t *testing.T) {
+	//InitMyLog(nil)
 	log := NewLogger("test", LevelDebug)
 
 	log.Debug("aaaaa")
