@@ -1,6 +1,6 @@
 # mylog
 
-* zap log
+* zap log > stdout
 
 ```go
 
@@ -17,5 +17,16 @@ log.Warnf("aaa %s aaa", "bbb")
 
 log.Error("aaaaa")
 log.Errorf("aaa %s aaa", "bbb")
+
+```
+
+* log > file
+```go
+
+InitMyLog(nil)
+log := NewLogger("file", LevelDebug)
+
+log.Debug("aaaaa")
+log.Debugf("aaa %s aaa", "bbb")
 
 ```
