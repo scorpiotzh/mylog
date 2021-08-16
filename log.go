@@ -91,7 +91,7 @@ func (l *logger) Debug(a ...interface{}) {
 	if l.level > LevelDebug {
 		return
 	}
-	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorDebug, l.name, fmt.Sprint(a...))
+	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorDebug, l.name, fmt.Sprintln(a...))
 	zapSugarLogger.Debug(msg)
 }
 
@@ -99,7 +99,7 @@ func (l *logger) Info(a ...interface{}) {
 	if l.level > LevelInfo {
 		return
 	}
-	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorInfo, l.name, fmt.Sprint(a...))
+	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorInfo, l.name, fmt.Sprintln(a...))
 	zapSugarLogger.Info(msg)
 }
 
@@ -107,7 +107,7 @@ func (l *logger) Warn(a ...interface{}) {
 	if l.level > LevelWarn {
 		return
 	}
-	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorWarn, l.name, fmt.Sprint(a...))
+	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorWarn, l.name, fmt.Sprintln(a...))
 	zapSugarLogger.Warn(msg)
 }
 
@@ -115,7 +115,7 @@ func (l *logger) Error(a ...interface{}) {
 	if l.level > LevelError {
 		return
 	}
-	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorError, l.name, fmt.Sprint(a...))
+	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorError, l.name, fmt.Sprintln(a...))
 	zapSugarLogger.Error(msg)
 }
 
@@ -123,7 +123,7 @@ func (l *logger) Panic(a ...interface{}) {
 	if l.level > LevelPanic {
 		return
 	}
-	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorPanic, l.name, fmt.Sprint(a...))
+	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorPanic, l.name, fmt.Sprintln(a...))
 	zapSugarLogger.Panic(msg)
 }
 
@@ -131,6 +131,6 @@ func (l *logger) Fatal(a ...interface{}) {
 	if l.level > LevelFatal {
 		return
 	}
-	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorFatal, l.name, fmt.Sprint(a...))
+	msg := fmt.Sprintf("\x1b[%dm▶ [%s] %s\x1b[0m", colorFatal, l.name, fmt.Sprintln(a...))
 	zapSugarLogger.Fatal(msg)
 }
