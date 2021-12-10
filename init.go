@@ -4,7 +4,6 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"
-	"os"
 	"time"
 )
 
@@ -65,7 +64,7 @@ func initDefaultLog(fileOut *lumberjack.Logger) *zap.SugaredLogger {
 		zapcore.NewConsoleEncoder(encoderConfig),
 		zapcore.NewMultiWriteSyncer(
 			zapcore.AddSync(fileOut),
-			zapcore.AddSync(os.Stdout),
+			//zapcore.AddSync(os.Stdout),
 		),
 		zap.NewAtomicLevelAt(zapcore.DebugLevel),
 	)
